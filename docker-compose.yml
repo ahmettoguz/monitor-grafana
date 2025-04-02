@@ -5,13 +5,15 @@ services:
     container_name: core-grafana-c
     volumes:
       - ./mount:/var/lib/grafana
+      - ./provisioning/dashboards/:/etc/grafana/provisioning/dashboards/
+      - ./provisioning/datasources/:/etc/grafana/provisioning/datasources/
     env_file:
       - ./.env
     networks:
       - network-core
-    # restart: always
-    ports:
-      - 3000:3000
+    restart: always
+    # ports:
+    #   - 3000:3000
 
 ####################################### Networks
 networks:
