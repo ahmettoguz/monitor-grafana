@@ -22,7 +22,7 @@
 
 <h2 id="intro">📌 About Project</h2>
 
-This project simplifies the deployment of Grafana with pre-configured settings, including persistent data storage, predefined admin password, email alert support and , dashboard JSON template, all managed via Docker Compose.
+This project simplifies the deployment of Grafana with a fully pre-configured setup. It includes persistent data storage, automated dashboard and datasource provisioning, predefined admin credentials, and email alert support, all easily managed through Docker Compose.
 
 <br/>
 
@@ -48,7 +48,7 @@ This project simplifies the deployment of Grafana with pre-configured settings, 
 - **Persistent Data:** Utilizes bind mounts to persist data on the host machine, preventing data loss during container restarts.
 - **Docker Compose Deployment:** Simplifies deployment with Docker Compose configuration, enabling easy setup and service orchestration without complex commands.
 - **Prometheus Integration:** Seamlessly integrates with Prometheus to visualize real-time monitoring data.
-- **Dashboard Template:** Comes with a prepared JSON dashboard that can be imported automatically.
+- **Dashboard & Datasource Provisioning:** Comes with a prepared JSON dashboard and predefined data sources, automatically loaded using provisioning files.
 - **Email Alerts Support:** Configure email alerts via `.env` file for monitoring important system metrics.
 - **Predefined Admin Credentials:** Allows the use of a predefined admin password stored in a `.env` file.
 
@@ -81,6 +81,8 @@ git clone https://github.com/ahmettoguz/core-grafana
 cp .env.example .env
 ```
 
+- Check `provisioning` directory for further dashboard and datasource configuration.
+
 - Create `network-core` network if not exists.
 
 ```
@@ -97,17 +99,6 @@ docker compose -p core up -d          grafana
 docker logs -f                        core-grafana-c
 ```
 
-```
-curl -vkL https://micro-local.net/prometheus/api/v1/query?query=up
-curl -vkL https://micro-local.net/prometheus/api/v1/metadata
-```
-
-- Check [`prometheus`](https://github.com/ahmettoguz/core-prometheus) repository to integrate prometheus to grafana
-
-- Add Prometheus data source with the name `prm` and the host URL `http://prometheus:9090/prometheus`.
-
-- Add basic auth to datasource if exists.
-
 <br/>
 
 <h2 id="contributors">👥 Contributors</h2>
@@ -115,4 +106,3 @@ curl -vkL https://micro-local.net/prometheus/api/v1/metadata
 <a href="https://github.com/ahmettoguz" target="_blank"><img width=60 height=60 src="https://avatars.githubusercontent.com/u/101711642?v=4"></a>
 
 ### [🔝](#top)
-
