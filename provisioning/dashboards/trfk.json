@@ -18,7 +18,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 7,
+  "id": 1,
   "links": [],
   "panels": [
     {
@@ -82,7 +82,7 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 12,
+        "w": 24,
         "x": 0,
         "y": 0
       },
@@ -118,7 +118,7 @@
           "useBackend": false
         }
       ],
-      "title": "Panel Title",
+      "title": "Service Request",
       "type": "timeseries"
     },
     {
@@ -131,15 +131,34 @@
           "color": {
             "mode": "thresholds"
           },
-          "mappings": [],
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "index": 1,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "color": "#8df57f",
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
-                "color": "#ffffff"
+                "color": "red"
               },
               {
-                "color": "green",
+                "color": "#8df57f",
+                "value": 0.1
+              },
+              {
+                "color": "#8df57f",
                 "value": 1
               }
             ]
@@ -148,7 +167,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
+        "h": 6,
         "w": 12,
         "x": 0,
         "y": 8
@@ -159,7 +178,9 @@
         "minVizWidth": 75,
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -187,7 +208,99 @@
           "useBackend": false
         }
       ],
-      "title": "New Panel",
+      "title": "Service Health",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prm"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#ccccdc",
+            "mode": "thresholds"
+          },
+          "fieldMinMax": false,
+          "mappings": [],
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "red"
+              },
+              {
+                "color": "red",
+                "value": 10
+              },
+              {
+                "color": "yellow",
+                "value": 11
+              },
+              {
+                "color": "yellow",
+                "value": 90
+              },
+              {
+                "color": "#8df57f",
+                "value": 91
+              },
+              {
+                "color": "#8df57f",
+                "value": 100
+              }
+            ]
+          },
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 12,
+        "y": 8
+      },
+      "id": 3,
+      "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "sizing": "auto",
+        "text": {}
+      },
+      "pluginVersion": "11.6.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prm"
+          },
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "expr": "traefik_service_server_up",
+          "fullMetaSearch": false,
+          "hide": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "legendFormat": "{{service}}",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Service Health (Percentage)",
+      "transparent": true,
       "type": "gauge"
     }
   ],
@@ -206,5 +319,5 @@
   "timezone": "browser",
   "title": "trfk",
   "uid": "trfk",
-  "version": 4
+  "version": 1
 }
