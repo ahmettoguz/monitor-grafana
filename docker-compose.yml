@@ -4,7 +4,7 @@ services:
     image: grafana/grafana
     container_name: core-grafana-c
     volumes:
-      - ./grafana:/var/lib/grafana
+      - ./mount:/var/lib/grafana
     env_file:
       - ./.env
     networks:
