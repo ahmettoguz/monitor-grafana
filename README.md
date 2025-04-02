@@ -104,7 +104,7 @@ curl -vkL https://micro-local.net/prometheus/api/v1/metadata
 
 - Check [`prometheus`](https://github.com/ahmettoguz/core-prometheus) repository to integrate prometheus to grafana
 
-- Add prometheus data source with docker service name as `http://prometheus:9090/prometheus`.
+- Add Prometheus data source with the name `prm` and the host URL `http://prometheus:9090/prometheus`.
 
 - Add basic auth to datasource if exists.
 
@@ -115,3 +115,4 @@ curl -vkL https://micro-local.net/prometheus/api/v1/metadata
 <a href="https://github.com/ahmettoguz" target="_blank"><img width=60 height=60 src="https://avatars.githubusercontent.com/u/101711642?v=4"></a>
 
 ### [🔝](#top)
+

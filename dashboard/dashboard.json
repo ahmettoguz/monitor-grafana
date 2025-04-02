@@ -24,7 +24,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "prm"
       },
       "fieldConfig": {
         "defaults": {
@@ -105,7 +105,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "prm"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -124,7 +124,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "prm"
       },
       "fieldConfig": {
         "defaults": {
@@ -174,7 +174,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "prm"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -206,7 +206,7 @@
   },
   "timepicker": {},
   "timezone": "browser",
-  "title": "traefik",
-  "uid": "prometheus",
+  "title": "trfk",
+  "uid": "trfk",
   "version": 4
 }
