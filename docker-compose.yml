@@ -1,0 +1,19 @@
+####################################### Services
+services:
+  grafana:
+    image: grafana/grafana
+    container_name: core-grafana-c
+    volumes:
+      - ./grafana:/var/lib/grafana
+    env_file:
+      - ./.env
+    networks:
+      - network-core
+    # restart: always
+    ports:
+      - 3000:3000
+
+####################################### Networks
+networks:
+  network-core:
+    external: true
