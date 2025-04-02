@@ -106,6 +106,8 @@ curl -vkL https://micro-local.net/prometheus/api/v1/metadata
 
 - Add prometheus data source with docker service name as `http://prometheus:9090/prometheus`.
 
+- Add basic auth to datasource if exists.
+
 <br/>
 
 <h2 id="contributors">👥 Contributors</h2>
