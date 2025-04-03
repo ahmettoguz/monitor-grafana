@@ -49,6 +49,7 @@ This project simplifies the deployment of Grafana with a fully pre-configured se
 - **Docker Compose Deployment:** Simplifies deployment with Docker Compose configuration, enabling easy setup and service orchestration without complex commands.
 - **Prometheus Integration:** Seamlessly integrates with Prometheus to visualize real-time monitoring data.
 - **Dashboard & Datasource Provisioning:** Comes with a prepared JSON dashboard and predefined data sources, automatically loaded using provisioning files.
+- **Pre-configured Dashboards:** Comes with ready-to-use dashboards for Traefik, Docker, and Node Exporter, offering instant insights into system performance.
 - **Email Alerts Support:** Configure email alerts via `.env` file for monitoring important system metrics.
 - **Predefined Admin Credentials:** Allows the use of a predefined admin password stored in a `.env` file.
 
