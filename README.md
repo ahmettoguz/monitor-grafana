@@ -100,6 +100,14 @@ docker compose -p monitor up -d         grafana
 docker logs -f                          monitor-grafana-c
 ```
 
+- Refer to [`cAdvisor`](https://github.com/ahmettoguz/monitor-cadvisor) repository to expose contianer metrics.
+
+- Refer to [`Node-Export`](https://github.com/ahmettoguz/monitor-node-export) repository to expose node metrics.
+
+- Refer to [`Prometheus`](https://github.com/ahmettoguz/monitor-prometheus) repository to integrate prometheus to scrap data.
+
+- Refer to [`Traefik`](https://github.com/ahmettoguz/core-traefik) repository to expose traefik metrics and also launch reverse proxy.
+
 <br/>
 
 <h2 id="contributors">👥 Contributors</h2>
