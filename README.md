@@ -74,7 +74,10 @@ cd monitor
 
 ```
 git clone https://github.com/ahmettoguz/monitor-grafana
+cd monitor-grafana
 ```
+
+- Check `provisioning` directory for further dashboard and datasource configuration.
 
 - Create `.env` file based on the `.env.example` file with credentails.
 
@@ -82,7 +85,12 @@ git clone https://github.com/ahmettoguz/monitor-grafana
 cp .env.example .env
 ```
 
-- Check `provisioning` directory for further dashboard and datasource configuration.
+- Create `mount` directory and change file permissions.
+
+```
+mkdir mount
+chmod -R 775 ./mount
+```
 
 - Create `network-monitor` network if not exists.
 
