@@ -1,4 +1,4 @@
-<h1 id="top" align="center">Core Grafana</h1>
+<h1 id="top" align="center">Monitor Grafana</h1>
 
 <br>
 
@@ -57,23 +57,23 @@ This project simplifies the deployment of Grafana with a fully pre-configured se
 
 <h2 id="releases">🚢 Releases</h2>
 
-&nbsp; [![.](https://img.shields.io/badge/1.0.0-233838?style=flat&label=version&labelColor=111727&color=1181A1)](https://github.com/ahmettoguz/core-grafana/tree/v1.0.0)
+&nbsp; [![.](https://img.shields.io/badge/1.0.0-233838?style=flat&label=version&labelColor=111727&color=1181A1)](https://github.com/ahmettoguz/monitor-grafana/tree/v1.0.0)
 
 <br/>
 
 <h2 id="system-startup">🚀 System Startup</h2>
 
-- Create a new directory named `core`.
+- Create a new directory named `monitor`.
 
 ```
-mkdir core
-cd core
+mkdir monitor
+cd monitor
 ```
 
 - Clone project.
 
 ```
-git clone https://github.com/ahmettoguz/core-grafana
+git clone https://github.com/ahmettoguz/monitor-grafana
 ```
 
 - Create `.env` file based on the `.env.example` file with credentails.
@@ -84,20 +84,20 @@ cp .env.example .env
 
 - Check `provisioning` directory for further dashboard and datasource configuration.
 
-- Create `network-core` network if not exists.
+- Create `network-monitor` network if not exists.
 
 ```
-docker network create network-core
+docker network create network-monitor
 ```
 
-- Run Container.
+- Run container.
 
 ```
-docker stop                           core-grafana-c
-docker rm                             core-grafana-c
-docker compose -p core up --build -d  grafana
-docker compose -p core up -d          grafana
-docker logs -f                        core-grafana-c
+docker stop                             monitor-grafana-c
+docker rm                               monitor-grafana-c
+docker compose -p monitor up --build -d grafana
+docker compose -p monitor up -d         grafana
+docker logs -f                          monitor-grafana-c
 ```
 
 <br/>
