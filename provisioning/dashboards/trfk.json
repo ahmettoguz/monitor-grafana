@@ -18,7 +18,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 5,
+  "id": 2,
   "links": [],
   "panels": [
     {
@@ -747,7 +747,9 @@
   "preload": false,
   "refresh": "auto",
   "schemaVersion": 41,
-  "tags": [],
+  "tags": [
+    "trfk"
+  ],
   "templating": {
     "list": []
   },
@@ -757,7 +759,7 @@
   },
   "timepicker": {},
   "timezone": "browser",
-  "title": "trfk",
+  "title": "Trfk",
   "uid": "trfk",
-  "version": 5
+  "version": 2
 }
