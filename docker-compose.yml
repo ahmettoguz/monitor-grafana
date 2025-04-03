@@ -2,7 +2,7 @@
 services:
   grafana:
     image: grafana/grafana
-    container_name: core-grafana-c
+    container_name: monitor-grafana-c
     volumes:
       - ./mount:/var/lib/grafana
       - ./provisioning/dashboards/:/etc/grafana/provisioning/dashboards/
@@ -10,12 +10,12 @@ services:
     env_file:
       - ./.env
     networks:
-      - network-core
+      - network-monitor
     restart: always
     # ports:
     #   - 3000:3000
 
 ####################################### Networks
 networks:
-  network-core:
+  network-monitor:
     external: true
