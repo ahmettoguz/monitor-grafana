@@ -23,7 +23,7 @@
 - **Prometheus Integration:** Seamlessly integrates with Prometheus to visualize real-time monitoring data.
 - **Dashboard & Datasource Provisioning:** Comes with a prepared JSON dashboard and predefined data sources, automatically loaded using provisioning files.
 - **Pre-configured Dashboards:** Comes with ready-to-use dashboards for Traefik, Docker, and Node Exporter, offering instant insights into system performance.
-- **Email Alerts Support:** Configure email alerts via `.env` file for monitoring important system metrics.
+- **Email Alerts Support:** predefined email configuration to set alert rules.
 - **Predefined Admin Credentials:** Allows the use of a predefined admin password stored in a `.env` file.
 
 <br/>
@@ -41,7 +41,10 @@ cd monitor
 
 ```
 git clone https://github.com/ahmettoguz/monitor-grafana
+cd monitor-grafana
 ```
+
+- Check `provisioning` directory for further dashboard and datasource configuration.
 
 - Create `.env` file based on the `.env.example` file with credentails.
 
@@ -49,7 +52,12 @@ git clone https://github.com/ahmettoguz/monitor-grafana
 cp .env.example .env
 ```
 
-- Check `provisioning` directory for further dashboard and datasource configuration.
+- Create `mount` directory and change file permissions.
+
+```
+mkdir mount
+chmod -R 775 ./mount
+```
 
 - Create `network-monitor` network if not exists.
 
@@ -69,7 +77,7 @@ docker logs -f                          monitor-grafana-c
 
 - Refer to [`cAdvisor`](https://github.com/ahmettoguz/monitor-cadvisor) repository to expose contianer metrics.
 
-- Refer to [`Node-Export`](https://github.com/ahmettoguz/monitor-node-export) repository to expose node metrics.
+- Refer to [`Node-Exporter`](https://github.com/ahmettoguz/monitor-node-exporter) repository to expose node metrics.
 
 - Refer to [`Prometheus`](https://github.com/ahmettoguz/monitor-prometheus) repository to integrate prometheus to scrap data.
 
