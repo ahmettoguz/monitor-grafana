@@ -3,7 +3,7 @@
 <br>
 
 <div align="center">
-    <img height=150 src="assets/banner/banner.png">
+    <img width=auto src="assets/banner/banner.png">
 </div>
 
 <br>
@@ -48,6 +48,7 @@ This project simplifies the deployment of Grafana with a fully pre-configured se
 - **Persistent Data:** Utilizes bind mounts to persist data on the host machine, preventing data loss during container restarts.
 - **Docker Compose Deployment:** Simplifies deployment with Docker Compose configuration, enabling easy setup and service orchestration without complex commands.
 - **Prometheus Integration:** Seamlessly integrates with Prometheus to visualize real-time monitoring data.
+- **Loki Integration:** Seamlessly integrates with Loki to visualize real-time logs.
 - **Dashboard & Datasource Provisioning:** Comes with a prepared JSON dashboard and predefined data sources, automatically loaded using provisioning files.
 - **Pre-configured Dashboards:** Comes with ready-to-use dashboards for Traefik, Docker, and Node Exporter, offering instant insights into system performance.
 - **Email Alerts Support:** predefined email configuration to set alert rules.
@@ -56,6 +57,8 @@ This project simplifies the deployment of Grafana with a fully pre-configured se
 <br/>
 
 <h2 id="releases">🚢 Releases</h2>
+
+&nbsp; [![.](https://img.shields.io/badge/1.2.0-233838?style=flat&label=version&labelColor=111727&color=1181A1)](https://github.com/ahmettoguz/monitor-grafana/tree/v1.2.0)
 
 &nbsp; [![.](https://img.shields.io/badge/1.1.0-233838?style=flat&label=version&labelColor=111727&color=1181A1)](https://github.com/ahmettoguz/monitor-grafana/tree/v1.1.0)
 
@@ -114,9 +117,13 @@ docker logs -f                          monitor-grafana-c
 
 - Refer to [`Node-Exporter`](https://github.com/ahmettoguz/monitor-node-exporter) repository to expose node metrics.
 
-- Refer to [`Prometheus`](https://github.com/ahmettoguz/monitor-prometheus) repository to integrate prometheus to scrap data.
+- Refer to [`Prometheus`](https://github.com/ahmettoguz/monitor-prometheus) repository to integrate prometheus to scrap metrics.
 
-- Refer to [`Traefik`](https://github.com/ahmettoguz/core-traefik) repository to expose traefik metrics and also launch reverse proxy.
+- Refer to [`Promtail`](https://github.com/ahmettoguz/monitor-promtail) repository to push traefik access logs to Loki.
+
+- Refer to [`Loki`](https://github.com/ahmettoguz/monitor-loki) repository to scrap traefik access logs from promtail.
+
+- Refer to [`Traefik`](https://github.com/ahmettoguz/core-traefik) repository to expose traefik access logs, metrics and also launch reverse proxy.
 
 <br/>
 
