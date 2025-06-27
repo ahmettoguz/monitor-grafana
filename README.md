@@ -40,6 +40,8 @@ This project simplifies the deployment of Grafana with a fully pre-configured se
 
 &nbsp; [![Grafana](https://img.shields.io/badge/Grafana-F2F4F9?style=for-the-badge&logo=grafana&logoColor=orange&labelColor=F2F4F9)](https://grafana.com)
 
+&nbsp; [![.Env](https://img.shields.io/badge/.ENV-ECD53F.svg?style=for-the-badge&logo=dotenv&logoColor=black)](https://www.ibm.com/docs/bg/aix/7.2?topic=files-env-file)
+
 <br/>
 
 <h2 id="features">🔥 Features</h2>
@@ -49,14 +51,17 @@ This project simplifies the deployment of Grafana with a fully pre-configured se
 - **Docker Compose Deployment:** Simplifies deployment with Docker Compose configuration, enabling easy setup and service orchestration without complex commands.
 - **Prometheus Integration:** Seamlessly integrates with Prometheus to visualize real-time monitoring data.
 - **Loki Integration:** Seamlessly integrates with Loki to visualize real-time logs.
-- **Dashboard & Datasource Provisioning:** Comes with a prepared JSON dashboard and predefined data sources, automatically loaded using provisioning files.
+- **Dashboard & Datasource Provisioning:** Comes with a prepared dashboard and predefined data sources, automatically loaded using provisioning files.
 - **Pre-configured Dashboards:** Comes with ready-to-use dashboards for Traefik, Docker, and Node Exporter, offering instant insights into system performance.
-- **Email Alerts Support:** predefined email configuration to set alert rules.
+- **Email Alerts Support:** Predefined email configuration to set alert rules.
+- **.env Configuration:** All environment variables are easily configurable using the `.env` file, simplifying configuration management.
 - **Predefined Admin Credentials:** Allows the use of a predefined admin password stored in a `.env` file.
 
 <br/>
 
 <h2 id="releases">🚢 Releases</h2>
+
+&nbsp; [![.](https://img.shields.io/badge/1.3.0-233838?style=flat&label=version&labelColor=111727&color=1181A1)](https://github.com/ahmettoguz/monitor-grafana/tree/v1.3.0)
 
 &nbsp; [![.](https://img.shields.io/badge/1.2.0-233838?style=flat&label=version&labelColor=111727&color=1181A1)](https://github.com/ahmettoguz/monitor-grafana/tree/v1.2.0)
 
@@ -90,27 +95,20 @@ cd monitor-grafana
 cp .env.example .env
 ```
 
-- Create `mount` directory and change file permissions.
-
-```
-mkdir mount
-chmod -R 775 ./mount
-```
-
 - Create `network-monitor` network if not exists.
 
 ```
 docker network create network-monitor
 ```
 
-- Run container.
+- Manage Container.
 
 ```
-docker stop                             monitor-grafana-c
-docker rm                               monitor-grafana-c
-docker compose -p monitor up --build -d grafana
-docker compose -p monitor up -d         grafana
-docker logs -f                          monitor-grafana-c
+docker stop                     container-grafana
+docker rm                       container-grafana
+docker volume rm                volume-grafana
+docker compose -p monitor up -d service-grafana
+docker logs -f                  container-grafana
 ```
 
 - Refer to [`cAdvisor`](https://github.com/ahmettoguz/monitor-cadvisor) repository to expose contianer metrics.
