@@ -89,7 +89,7 @@
         {
           "direction": "backward",
           "editorMode": "code",
-          "expr": "count(count_over_time({service_name=\"traefik\"} | json | ServiceAddr=~\"${service_name}\" | label_format ID=`{{.ClientHost}}{{.request_User_Agent}}` | keep ID [${__range}]))",
+          "expr": "count(count_over_time({service_name=\"label-job-traefik-access-log\"} | json | ServiceAddr=~\"${service_name}\" | label_format ID=`{{.ClientHost}}{{.request_User_Agent}}` | keep ID [${__range}]))",
           "queryType": "range",
           "refId": "A"
         }
@@ -152,7 +152,7 @@
         {
           "direction": "backward",
           "editorMode": "code",
-          "expr": "sum(count_over_time({service_name=\"traefik\"} | json | ServiceAddr=~\"${service_name}\" [${__range}]))",
+          "expr": "sum(count_over_time({service_name=\"label-job-traefik-access-log\"} | json | ServiceAddr=~\"${service_name}\" [${__range}]))",
           "queryType": "range",
           "refId": "A"
         }
@@ -260,7 +260,7 @@
         {
           "direction": "backward",
           "editorMode": "code",
-          "expr": "sum(count_over_time({service_name=\"traefik\"} | json | ServiceAddr=~\"${service_name}\" [$__auto])) by (detected_level)",
+          "expr": "sum(count_over_time({service_name=\"label-job-traefik-access-log\"} | json | ServiceAddr=~\"${service_name}\" [$__auto])) by (detected_level)",
           "queryType": "range",
           "refId": "A"
         }
@@ -304,7 +304,7 @@
           },
           "direction": "backward",
           "editorMode": "code",
-          "expr": "{service_name=\"traefik\"} | json | ServiceAddr=~\"${service_name}\" | line_format \"[{{.time}}] - [{{.ClientUsername}}] - [{{.ServiceAddr}}] - [{{.OriginStatus}}] - [{{.RequestPath}}] - [{{.ClientHost}}]\"",
+          "expr": "{service_name=\"label-job-traefik-access-log\"} | json | ServiceAddr=~\"${service_name}\" | line_format \"[{{.time}}] - [{{.ClientUsername}}] - [{{.ServiceAddr}}] - [{{.OriginStatus}}] - [{{.RequestPath}}] - [{{.ClientHost}}]\"",
           "queryType": "range",
           "refId": "A"
         }
