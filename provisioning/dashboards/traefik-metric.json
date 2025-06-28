@@ -749,7 +749,8 @@
   "refresh": "5m",
   "schemaVersion": 41,
   "tags": [
-    "trfk"
+    "traefik",
+    "metric"
   ],
   "templating": {
     "list": []
@@ -760,7 +761,7 @@
   },
   "timepicker": {},
   "timezone": "browser",
-  "title": "Trfk",
-  "uid": "trfk",
+  "title": "Traefik Metrics",
+  "uid": "traefik-metrics",
   "version": 1
 }
