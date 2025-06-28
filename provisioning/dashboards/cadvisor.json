@@ -25,7 +25,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prm"
+        "uid": "datasource-prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -89,7 +89,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prm"
+            "uid": "datasource-prometheus"
           },
           "expr": "count(container_last_seen{image!=\"\"})",
           "intervalFactor": 2,
@@ -106,7 +106,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prm"
+        "uid": "datasource-prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -170,7 +170,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prm"
+            "uid": "datasource-prometheus"
           },
           "expr": "sum(container_memory_usage_bytes{image!=\"\"})/1024/1024",
           "intervalFactor": 2,
@@ -187,7 +187,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prm"
+        "uid": "datasource-prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -251,7 +251,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prm"
+            "uid": "datasource-prometheus"
           },
           "expr": "sum(rate(container_cpu_user_seconds_total{image!=\"\"}[5m]) * 100)",
           "intervalFactor": 2,
@@ -268,7 +268,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prm"
+        "uid": "datasource-prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -354,7 +354,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prm"
+            "uid": "datasource-prometheus"
           },
           "expr": "rate(container_cpu_user_seconds_total{image!=\"\"}[5m]) * 100",
           "intervalFactor": 2,
@@ -370,7 +370,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prm"
+        "uid": "datasource-prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -456,7 +456,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prm"
+            "uid": "datasource-prometheus"
           },
           "expr": "container_memory_usage_bytes{image!=\"\"}",
           "hide": false,
@@ -473,7 +473,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prm"
+        "uid": "datasource-prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -556,7 +556,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prm"
+            "uid": "datasource-prometheus"
           },
           "expr": "irate(container_network_receive_bytes_total{image!=\"\"}[5m])",
           "intervalFactor": 2,
@@ -572,7 +572,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prm"
+        "uid": "datasource-prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -655,7 +655,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prm"
+            "uid": "datasource-prometheus"
           },
           "expr": "irate(container_network_transmit_bytes_total{image!=\"\"}[5m])",
           "intervalFactor": 2,
@@ -669,7 +669,7 @@
     }
   ],
   "preload": false,
-  "refresh": "10s",
+  "refresh": "5m",
   "schemaVersion": 41,
   "tags": [
     "docker"
@@ -678,7 +678,7 @@
     "list": []
   },
   "time": {
-    "from": "now-5m",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {},
