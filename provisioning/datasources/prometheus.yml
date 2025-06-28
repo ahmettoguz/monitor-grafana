@@ -1,6 +1,7 @@
 datasources:
-  - name: prm
+  - name: datasource-prometheus
+    uid: datasource-prometheus
     type: prometheus
     access: proxy
-    url: http://prometheus:9090/prometheus
+    url: http://service-prometheus:9090
     isDefault: true
