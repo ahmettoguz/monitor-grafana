@@ -1,5 +1,6 @@
 datasources:
-  - name: loki
+  - name: datasource-loki
+    uid: datasource-loki
     type: loki
     access: proxy
-    url: http://loki:3100
+    url: http://service-loki:3100

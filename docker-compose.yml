@@ -1,17 +1,17 @@
 ####################################### Services
 services:
-  grafana:
-    image: grafana/grafana
-    container_name: monitor-grafana-c
+  service-grafana:
+    image: ahmettoguz/grafana:12.0.2
+    container_name: container-grafana
     volumes:
-      - ./mount:/var/lib/grafana
+      - volume-grafana:/var/lib/grafana
       - ./provisioning/dashboards/:/etc/grafana/provisioning/dashboards/
       - ./provisioning/datasources/:/etc/grafana/provisioning/datasources/
     env_file:
       - ./.env
     networks:
       - network-monitor
-    restart: always
+    restart: ${RESTART_POLICY}
     # ports:
     #   - 3000:3000
 
@@ -19,3 +19,8 @@ services:
 networks:
   network-monitor:
     external: true
+
+####################################### Volumes
+volumes:
+  volume-grafana:
+    name: volume-grafana

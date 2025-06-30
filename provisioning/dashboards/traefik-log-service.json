@@ -15,11 +15,11 @@
       }
     ]
   },
-  "description": "All the Traefik access logs visualized.",
+  "description": "Traeifk access logs with service filter is visualized. If the request couldn't be successfull, for example if service is down and coming request couldn't reach the service, this request will not be visualized.",
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 5,
+  "id": 4,
   "links": [],
   "panels": [
     {
@@ -87,7 +87,7 @@
         {
           "direction": "backward",
           "editorMode": "code",
-          "expr": "count(count_over_time({service_name=\"label-job-traefik-access-log\"} | json | label_format ID=`{{.ClientHost}}` | keep ID [${__range}]))",
+          "expr": "count(count_over_time({service_name=\"label-job-traefik-access-log\"} | json | ServiceName=~\".*${traefik_service}.*\" | label_format ID=`{{.ClientHost}}` | keep ID [${__range}]))",
           "queryType": "range",
           "refId": "A"
         }
@@ -147,7 +147,7 @@
         {
           "direction": "backward",
           "editorMode": "code",
-          "expr": "sum(count_over_time({service_name=\"label-job-traefik-access-log\"} | json [${__range}]))",
+          "expr": "sum(count_over_time({service_name=\"label-job-traefik-access-log\"} | json | ServiceName=~\".*${traefik_service}.*\" [${__range}]))",
           "queryType": "range",
           "refId": "A"
         }
@@ -255,7 +255,7 @@
         {
           "direction": "backward",
           "editorMode": "code",
-          "expr": "sum(count_over_time({service_name=\"label-job-traefik-access-log\"} | json [$__auto]))",
+          "expr": "sum(count_over_time({service_name=\"label-job-traefik-access-log\"} | json | ServiceName=~\".*${traefik_service}.*\"  [$__auto]))",
           "legendFormat": "",
           "queryType": "range",
           "refId": "A"
@@ -300,7 +300,7 @@
           },
           "direction": "backward",
           "editorMode": "code",
-          "expr": "{service_name=\"label-job-traefik-access-log\"} | json | line_format \"- [{{.ClientUsername}}] - [{{.RequestAddr}}] - [{{.OriginStatus}}] - [{{.RequestPath}}] - [{{.ClientHost}}] - [{{.ServiceName}}]\"",
+          "expr": "{service_name=\"label-job-traefik-access-log\"} | json | ServiceName=~\".*${traefik_service}.*\" | line_format \"- [{{.ClientUsername}}] - [{{.RequestAddr}}] - [{{.OriginStatus}}] - [{{.RequestPath}}] - [{{.ClientHost}}] - [{{.ServiceName}}]\"",
           "queryType": "range",
           "refId": "A"
         }
@@ -315,10 +315,35 @@
   "tags": [
     "loki",
     "traefik",
-    "log"
+    "log",
+    "service"
   ],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "allowCustomValue": false,
+        "current": {
+          "text": "All",
+          "value": "$__all"
+        },
+        "definition": "",
+        "description": "traefik service name",
+        "includeAll": true,
+        "label": "traefik_service",
+        "name": "traefik_service",
+        "options": [],
+        "query": {
+          "label": "traefik_service_name",
+          "refId": "LokiVariableQueryEditor-VariableQuery",
+          "stream": "",
+          "type": 1
+        },
+        "refresh": 1,
+        "regex": "",
+        "sort": 1,
+        "type": "query"
+      }
+    ]
   },
   "time": {
     "from": "now-1h",
@@ -326,7 +351,7 @@
   },
   "timepicker": {},
   "timezone": "browser",
-  "title": "Traefik Log",
-  "uid": "dashboard-3",
+  "title": "Traefik Log Service",
+  "uid": "dashboard-2",
   "version": 1
 }

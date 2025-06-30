@@ -1062,7 +1062,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prm"
+        "uid": "datasource-prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -1160,7 +1160,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prm"
+            "uid": "datasource-prometheus"
           },
           "exemplar": true,
           "expr": "sum(rate(container_cpu_system_seconds_total[$__range]))",
@@ -1175,7 +1175,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prm"
+            "uid": "datasource-prometheus"
           },
           "expr": "sum(rate(container_cpu_system_seconds_total{name=~\".+\"}[1m]))",
           "format": "time_series",
@@ -1189,7 +1189,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prm"
+            "uid": "datasource-prometheus"
           },
           "expr": "sum(rate(container_cpu_system_seconds_total{id=\"/\"}[1m]))",
           "format": "time_series",
@@ -1204,7 +1204,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prm"
+            "uid": "datasource-prometheus"
           },
           "expr": "sum(rate(process_cpu_seconds_total[$interval])) * 100",
           "format": "time_series",
@@ -1219,7 +1219,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prm"
+            "uid": "datasource-prometheus"
           },
           "expr": "sum(rate(container_cpu_system_seconds_total{name=~\".+\"}[1m])) + sum(rate(container_cpu_system_seconds_total{id=\"/\"}[1m])) + sum(rate(process_cpu_seconds_total[1m]))",
           "format": "time_series",
@@ -1232,7 +1232,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prm"
+            "uid": "datasource-prometheus"
           },
           "exemplar": true,
           "expr": "100 - (avg by (instance) (irate(node_cpu_seconds_total{mode=\"idle\"}[5m])) * 100)",
@@ -1250,7 +1250,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prm"
+        "uid": "datasource-prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -1359,7 +1359,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prm"
+            "uid": "datasource-prometheus"
           },
           "exemplar": true,
           "expr": "node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes",
@@ -23717,9 +23717,10 @@
     }
   ],
   "preload": false,
-  "refresh": "1m",
+  "refresh": "5m",
   "schemaVersion": 41,
   "tags": [
+    "metrics",
     "linux"
   ],
   "templating": {
