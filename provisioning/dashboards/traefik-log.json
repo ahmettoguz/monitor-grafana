@@ -15,10 +15,11 @@
       }
     ]
   },
+  "description": "All the Traefik access logs visualized.",
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 3,
+  "id": 5,
   "links": [],
   "panels": [
     {

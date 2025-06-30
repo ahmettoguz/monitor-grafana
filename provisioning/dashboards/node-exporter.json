@@ -23720,6 +23720,7 @@
   "refresh": "5m",
   "schemaVersion": 41,
   "tags": [
+    "metrics",
     "linux"
   ],
   "templating": {

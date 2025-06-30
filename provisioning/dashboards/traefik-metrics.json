@@ -750,7 +750,7 @@
   "schemaVersion": 41,
   "tags": [
     "traefik",
-    "metric"
+    "metrics"
   ],
   "templating": {
     "list": []

@@ -15,10 +15,11 @@
       }
     ]
   },
+  "description": "Traeifk access logs with service filter is visualized. If the request couldn't be successfull, for example if service is down and coming request couldn't reach the service, this request will not be visualized.",
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 3,
+  "id": 4,
   "links": [],
   "panels": [
     {

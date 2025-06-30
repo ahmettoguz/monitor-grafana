@@ -15,6 +15,7 @@
       }
     ]
   },
+  "description": "Traefik access log with request address filter is visualized.",
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
@@ -86,7 +87,7 @@
         {
           "direction": "backward",
           "editorMode": "code",
-          "expr": "count(count_over_time({service_name=\"label-job-traefik-access-log\"} | json | RequestAddr=~\".*${traefik_request_addr}.*\" | label_format ID=`{{.ClientHost}}` | keep ID [${__range}]))",
+          "expr": "count(count_over_time({service_name=\"label-job-traefik-access-log\"} | json | RequestAddr=~\"${traefik_request_addr}\" | label_format ID=`{{.ClientHost}}` | keep ID [${__range}]))",
           "queryType": "range",
           "refId": "A"
         }
@@ -146,7 +147,7 @@
         {
           "direction": "backward",
           "editorMode": "code",
-          "expr": "sum(count_over_time({service_name=\"label-job-traefik-access-log\"} | json | RequestAddr=~\".*${traefik_request_addr}.*\" [${__range}]))",
+          "expr": "sum(count_over_time({service_name=\"label-job-traefik-access-log\"} | json | RequestAddr=~\"${traefik_request_addr}\" [${__range}]))",
           "queryType": "range",
           "refId": "A"
         }
@@ -254,7 +255,7 @@
         {
           "direction": "backward",
           "editorMode": "code",
-          "expr": "sum(count_over_time({service_name=\"label-job-traefik-access-log\"} | json | RequestAddr=~\".*${traefik_request_addr}.*\" [$__auto]))",
+          "expr": "sum(count_over_time({service_name=\"label-job-traefik-access-log\"} | json | RequestAddr=~\"${traefik_request_addr}\" [$__auto]))",
           "legendFormat": "",
           "queryType": "range",
           "refId": "A"
@@ -299,7 +300,7 @@
           },
           "direction": "backward",
           "editorMode": "code",
-          "expr": "{service_name=\"label-job-traefik-access-log\"} | json | RequestAddr=~\".*${traefik_request_addr}.*\"  | line_format \"- [{{.ClientUsername}}] - [{{.RequestAddr}}] - [{{.OriginStatus}}] - [{{.RequestPath}}] - [{{.ClientHost}}] - [{{.ServiceName}}]\"",
+          "expr": "{service_name=\"label-job-traefik-access-log\"} | json | RequestAddr=~\"${traefik_request_addr}\"  | line_format \"- [{{.ClientUsername}}] - [{{.RequestAddr}}] - [{{.OriginStatus}}] - [{{.RequestPath}}] - [{{.ClientHost}}] - [{{.ServiceName}}]\"",
           "queryType": "range",
           "refId": "A"
         }
@@ -352,5 +353,5 @@
   "timezone": "browser",
   "title": "Traefik Log Request Address",
   "uid": "dashboard-1",
-  "version": 1
+  "version": 2
 }
