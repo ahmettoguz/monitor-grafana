@@ -22,14 +22,17 @@
 
 <h2 id="intro">📌 About Project</h2>
 
-This project simplifies the deployment of Grafana with a fully pre-configured setup. It includes persistent data storage, automated dashboard and datasource provisioning, predefined admin credentials, and email alert support, all easily managed through Docker Compose.
+This project simplifies the deployment of Grafana with a fully pre-configured setup. It includes persistent data storage, preconfigured Traefik metrics, Traefik access logs, host OS system metrics and Docker metrics dashboard with datasource provisioning, predefined admin credentials, and email alert support, all easily managed through Docker Compose.
 
 <br/>
 
 <h2 id="dashboard">🔥 Dashboard</h2>
 
 <div align="center">
-    <img width=800 src="assets/dashboard/dashboard.png">
+    <img width=800 src="assets/dashboard/dashboard1.png">
+    <img width=800 src="assets/dashboard/dashboard2.png">
+    <img width=800 src="assets/dashboard/dashboard3.png">
+    <img width=800 src="assets/dashboard/dashboard4.png">
 </div>
 
 <br/>
