@@ -64,6 +64,8 @@ This project simplifies the deployment of Grafana with a fully pre-configured se
 
 <h2 id="releases">🚢 Releases</h2>
 
+&nbsp; [![.](https://img.shields.io/badge/1.3.2-233838?style=flat&label=version&labelColor=111727&color=1181A1)](https://github.com/ahmettoguz/monitor-grafana/tree/v1.3.2)
+
 &nbsp; [![.](https://img.shields.io/badge/1.3.1-233838?style=flat&label=version&labelColor=111727&color=1181A1)](https://github.com/ahmettoguz/monitor-grafana/tree/v1.3.1)
 
 &nbsp; [![.](https://img.shields.io/badge/1.3.0-233838?style=flat&label=version&labelColor=111727&color=1181A1)](https://github.com/ahmettoguz/monitor-grafana/tree/v1.3.0)
@@ -95,7 +97,7 @@ cd monitor-grafana
 - Switch version.
 
 ```
-git checkout v1.3.1
+git checkout v1.3.2
 ```
 
 - Create `.env` file based on the `.env.example` file with credentails.
