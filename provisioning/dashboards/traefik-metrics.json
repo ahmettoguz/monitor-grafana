@@ -18,7 +18,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 4,
+  "id": 6,
   "links": [],
   "panels": [
     {
@@ -305,31 +305,26 @@
       },
       "fieldConfig": {
         "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "fieldMinMax": false,
           "mappings": [],
+          "max": 1,
+          "min": 0,
           "thresholds": {
-            "mode": "percentage",
+            "mode": "absolute",
             "steps": [
               {
-                "color": "light-red"
+                "color": "green"
               },
               {
                 "color": "light-red",
                 "value": 0
               },
               {
-                "color": "green",
+                "color": "light-green",
                 "value": 1
-              },
-              {
-                "color": "green",
-                "value": 2
               }
             ]
-          }
+          },
+          "unit": "none"
         },
         "overrides": []
       },
@@ -341,18 +336,11 @@
       },
       "id": 1,
       "options": {
-        "displayMode": "gradient",
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": false
-        },
-        "maxVizHeight": 300,
-        "minVizHeight": 16,
-        "minVizWidth": 0,
-        "namePlacement": "auto",
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
         "orientation": "auto",
+        "percentChangeColorMode": "standard",
         "reduceOptions": {
           "calcs": [
             "last"
@@ -360,10 +348,10 @@
           "fields": "",
           "values": false
         },
-        "showUnfilled": true,
-        "sizing": "auto",
+        "showPercentChange": false,
         "text": {},
-        "valueMode": "hidden"
+        "textMode": "value_and_name",
+        "wideLayout": true
       },
       "pluginVersion": "12.0.2",
       "targets": [
@@ -373,7 +361,7 @@
             "uid": "datasource-prometheus"
           },
           "disableTextWrap": false,
-          "editorMode": "builder",
+          "editorMode": "code",
           "expr": "traefik_service_server_up",
           "fullMetaSearch": false,
           "hide": false,
@@ -387,7 +375,7 @@
       ],
       "title": "Service Health",
       "transparent": true,
-      "type": "bargauge"
+      "type": "stat"
     },
     {
       "datasource": {

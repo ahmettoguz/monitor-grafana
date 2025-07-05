@@ -50,7 +50,7 @@ cd monitor-grafana
 - Switch version.
 
 ```
-git checkout v1.3.1
+git checkout v1.3.2
 ```
 
 - Create `.env` file based on the `.env.example` file with credentails.
