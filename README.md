@@ -1,4 +1,4 @@
-<h1 id="top" align="center">Monitor Grafana <br/> 🚢 v1.3.1 🚢</h1>
+<h1 id="top" align="center">Monitor Grafana <br/> 🚢 v1.3.2 🚢</h1>
 
 <br>
 
