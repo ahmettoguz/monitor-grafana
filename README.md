@@ -47,13 +47,20 @@ git clone https://github.com/ahmettoguz/monitor-grafana
 cd monitor-grafana
 ```
 
-- Check `provisioning` directory for further dashboard and datasource configuration.
+- Switch version.
+
+```
+git checkout v1.3.1
+```
 
 - Create `.env` file based on the `.env.example` file with credentails.
 
 ```
 cp .env.example .env
+nano .env
 ```
+
+- Check `provisioning` directory for further dashboard and datasource configuration.
 
 - Create `network-monitor` network if not exists.
 
